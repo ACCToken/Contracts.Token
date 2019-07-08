@@ -2,7 +2,7 @@
 
 ACC Token Contract
 
-# Features
+## Features
 
 1. Contract Init
 2. Token Create
@@ -14,7 +14,6 @@ ACC Token Contract
 8. Token Stake(Not Open)
 9. Token Unstake(Not Open)
 
-
-# eosio.CDT
+## eosio.CDT
 
 Version < 1.6.0
