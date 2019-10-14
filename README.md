@@ -13,7 +13,8 @@ ACC Token Contract
 7. Contract Config(Closed)
 8. Token Stake(Closed)
 9. Token Unstake(Closed)
+10. Token ReduceTo
 
 ## eosio.CDT
 
-Version 1.5.0
+Version 1.6.2

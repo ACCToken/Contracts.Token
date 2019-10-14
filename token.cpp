@@ -121,6 +121,26 @@ public:
       add_balance(to, quantity, payer);
    }
 
+   ACTION reduceto(name issuer, asset maximum_supply)
+   {
+      auto sym = maximum_supply.symbol;
+      check(sym.is_valid(), "invalid symbol name");
+
+      stats statstable(get_self(), sym.code().raw());
+      auto existing = statstable.find(sym.code().raw());
+      check(existing != statstable.end(), "token with symbol does not exist, create token before reduce");
+      const auto &st = *existing;
+      //check(to == st.issuer, "tokens can only be issued to issuer account");
+
+      require_auth(st.issuer);
+      check(maximum_supply.amount >= st.supply.amount, "maximum_supply must greater than current supply.");
+
+      statstable.modify(st, same_payer, [&](auto &s) {
+         s.max_supply = maximum_supply;
+      });
+   }
+
+
 #pragma endregion
 
 #pragma region TABLE
@@ -265,4 +285,4 @@ private:
    }
 };
 
-EOSIO_DISPATCH(token, (init)(create)(issue)(transfer))
+EOSIO_DISPATCH(token, (init)(create)(issue)(transfer)(reduceto))
