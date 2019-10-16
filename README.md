@@ -14,6 +14,7 @@ ACC Token Contract
 8. Token Stake(Closed)
 9. Token Unstake(Closed)
 10. Token ReduceTo
+11. Token Retire
 
 ## eosio.CDT
 

@@ -105,6 +105,20 @@
             ]
         },
         {
+            "name": "retire",
+            "base": "",
+            "fields": [
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
             "name": "stake_stats",
             "base": "",
             "fields": [
@@ -192,6 +206,11 @@
         {
             "name": "reduceto",
             "type": "reduceto",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "retire",
+            "type": "retire",
             "ricardian_contract": ""
         },
         {
